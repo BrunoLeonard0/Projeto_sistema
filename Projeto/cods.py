@@ -19,6 +19,11 @@ def criar_arq():
         print('Arquivo \'arq.txt\' ja existe!')
 
 
+def escrever_arq():
+    with open(file, 'a') as arquivo:
+        arquivo.write(input('Nome: '))
+        arquivo.write(input('CPF: '))
+
 
 def menu(lista:list):
     cabecalho('Menu')
