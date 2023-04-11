@@ -6,9 +6,8 @@ def cabecalho(txt:str):
     print(txt.center(30))
     print('---'*10)
 
-
+file = 'arq.txt'
 def criar_arq():
-    file = 'arq.txt'
     try:
         with open(file, "r"):
            pass
