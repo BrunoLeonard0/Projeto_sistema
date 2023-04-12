@@ -32,17 +32,24 @@ def ler_aqr():
         arquivo.read()
 
 def menu(lista:list):
-    cabecalho('Menu')
-    for i, c in enumerate(lista):
-        print(f'\033[34m{i+1}\033[m - {c}')
-    print()
-    opcao = int(input('\033[33mSua opção: \033[m'))
-    if opcao == 1:
-        escrever_arq()
-    elif opcao == 2:
-        print(ler_aqr())
-    elif opcao == 3:
-        cabecalho('Desligando sistema...')
-        sleep(1)
-        print('Obrigado por acessar nosso programa...')
+    while True:
+        cabecalho('Menu')
+        for i, c in enumerate(lista):
+            print(f'\033[34m{i+1}\033[m - {c}')
+        print()
+        opcao = int(input('\033[33mSua opção: \033[m'))
+        while True:
+            if opcao == 1:
+                escrever_arq()
+                break
+            elif opcao == 2:
+                print(ler_aqr())
+                break
+            elif opcao == 3:
+                cabecalho('Desligando sistema...')
+                sleep(1)
+                print('Obrigado por acessar nosso programa...')
+                break
+        if opcao == 3:
+            break
 
