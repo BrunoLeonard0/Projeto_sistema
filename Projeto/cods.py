@@ -27,9 +27,10 @@ def escrever_arq():
         arquivo.write('\n')
 
 
-def ler_aqr():
+def ler_arq():
     with open(file, 'r') as arquivo:
-        arquivo.read()
+        return arquivo.read()
+    
 
 def menu(lista:list):
     while True:
@@ -40,10 +41,15 @@ def menu(lista:list):
         opcao = int(input('\033[33mSua opção: \033[m'))
         while True:
             if opcao == 1:
+                cabecalho('Abrir cadastro')
                 escrever_arq()
+                sleep(1)
                 break
             elif opcao == 2:
-                print(ler_aqr())
+                cabecalho('Visualizar cadastros')
+                print('NOME/CPF')
+                print(ler_arq())
+                sleep(1)
                 break
             elif opcao == 3:
                 cabecalho('Desligando sistema...')
