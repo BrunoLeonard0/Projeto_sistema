@@ -22,7 +22,7 @@ def criar_arq():
 def escrever_arq():
     with open(file, 'a') as arquivo:
         arquivo.write(input('Nome: '))
-        arquivo.write('\t\t')
+        arquivo.write('\t')
         arquivo.write(input('CPF: '))
         arquivo.write('\n')
 
@@ -38,28 +38,29 @@ def menu(lista:list):
         for i, c in enumerate(lista):
             print(f'\033[34m{i+1}\033[m - {c}')
         print()
-        opcao = int(input('\033[33mSua opção: \033[m'))
-        if opcao == 1 or 2 or 3:    
-            while True:
-                if opcao == 1:
-                    cabecalho('Abrir cadastro')
-                    escrever_arq()
-                    sleep(1)
-                    break
-                elif opcao == 2:
-                    cabecalho('Visualizar cadastros')
-                    print('NOME\t\tCPF')
-                    print(ler_arq())
-                    sleep(1)
-                    break
-                elif opcao == 3:
-                    cabecalho('Desligando sistema...')
-                    sleep(1)
-                    print('Obrigado por acessar nosso programa...')
-                    break
-        else:
-            print('\033[32mOpção inválida\033[m')
-            continue      
-        if opcao == 3:
+        opcao = ''
+        while True:
+            opcao = input('\033[33mSua opção: \033[m') 
+            if opcao == '1':
+                cabecalho('Abrir cadastro')
+                escrever_arq()
+                sleep(1)
+                break
+            elif opcao == '2':
+                cabecalho('Visualizar cadastros')
+                print('NOME/CPF')
+                print(ler_arq())                   
+                sleep(1)
+                break
+            elif opcao == '3':
+                cabecalho('Desligando sistema...')
+                sleep(1)
+                print('Obrigado por acessar nosso programa...')                    
+                break
+
+            else:
+                print('Opção inválida!')
+                        
+        if opcao == '3':
             break
 
