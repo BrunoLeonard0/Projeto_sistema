@@ -22,8 +22,14 @@ def criar_arq():
 def escrever_arq():
     with open(file, 'a') as arquivo:
         arquivo.write(input('Nome: '))
+        arquivo.write('   ')
         arquivo.write(input('CPF: '))
+        arquivo.write('\n')
 
+
+def ler_aqr():
+    with open(file, 'r') as arquivo:
+        arquivo.read()
 
 def menu(lista:list):
     cabecalho('Menu')
@@ -32,9 +38,9 @@ def menu(lista:list):
     print()
     opcao = int(input('\033[33mSua opção: \033[m'))
     if opcao == 1:
-        pass
+        escrever_arq()
     elif opcao == 2:
-        pass
+        print(ler_aqr())
     elif opcao == 3:
         cabecalho('Desligando sistema...')
         sleep(1)
